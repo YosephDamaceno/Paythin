@@ -66,7 +66,7 @@ figuras = []       # Todas as figuras desenhadas
 figura_nova = None # Figura que está sendo desenhada, mas ainda não foi incluída em figuras
 
 root = Tk()
-root.title('Isso é um Projeto Sério')
+root.title('Primeira entrega do Projeto POO')
 frame = Frame(root)
 
 # Widgets arranjados com Layout grid dentro de frame
