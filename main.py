@@ -1,5 +1,15 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import colorchooser 
+
+#Adicionando opção de escolher cores
+cor_atual = 'black'
+
+def escolher_cor():
+    global cor_atual
+    cor = colorchooser.askcolor()[1]
+    if cor:
+        cor_atual = cor
 
 # Quando mouse é pressionado
 def iniciar_figura_nova(event):
@@ -33,6 +43,7 @@ def atualizar_figura_nova(event):
             "retangulo",
             (figura_nova[1][0], figura_nova[1][1], event.x, event.y)
         )
+
 
     elif tipo == "oval": ### novo ###
         figura_nova = (
@@ -81,7 +92,8 @@ def desenhar_figuras():
                 values[0],
                 values[1],
                 values[2],
-                values[3]
+                values[3],
+                fill = cor_atual
             )
 
         elif fig == "retangulo":
@@ -89,7 +101,8 @@ def desenhar_figuras():
                 values[0],
                 values[1],
                 values[2],
-                values[3]
+                values[3],
+                outline=cor_atual
             )
 
         elif fig in ["oval", 'Círculo']: 
@@ -97,11 +110,12 @@ def desenhar_figuras():
                 values[0],
                 values[1],
                 values[2],
-                values[3]
+                values[3],
+                outline=cor_atual
             )
 
         else:  # fig == "rabisco"
-            canvas.create_line(values)
+            canvas.create_line(values, fill= cor_atual)
 
 
 def desenhar_figura_nova():
@@ -194,13 +208,16 @@ option_menu.grid(column=1, row=0, sticky=W, **paddings)
 # Área de desenho
 canvas = Canvas(frame, bg='white', width=600, height=600)
 canvas.grid(column=0, row=1, columnspan=2, sticky=W, **paddings)
-
+#botão pra escolher cores
+botao_cor = Button(root, text = "Escolher cor", command = escolher_cor)
+botao_cor.pack()
 frame.pack()
 
 # Eventos de mouse associados ao canvas - com seus callbacks
 canvas.bind('<ButtonPress-1>', iniciar_figura_nova)
 canvas.bind('<B1-Motion>', atualizar_figura_nova)
 canvas.bind('<ButtonRelease-1>', incluir_figura_nova)
+
 
 root.attributes('-topmost', 1)
 root.mainloop()
