@@ -6,12 +6,18 @@ from tkinter import colorchooser
 cor_atual = 'black'
 background = None
 
-def escolher_cor():
+def escolher_cor_borda():
     global cor_atual
     global background
     cor = colorchooser.askcolor()[1]
     if cor:
         cor_atual = cor
+
+def escolher_cor_preenchimento():
+    global cor_atual
+    global background
+    cor = colorchooser.askcolor()[1]
+    if cor:
         background = cor
 
 # Quando mouse é pressionado
@@ -206,10 +212,12 @@ option_menu.grid(column=1, row=0, sticky=W, **paddings)
 
 # Área de desenho
 canvas = Canvas(frame, bg='white', width=600, height=600)
-canvas.grid(column=0, row=2, columnspan=2, sticky=W, **paddings)
+canvas.grid(column=0, row=3, columnspan=2, sticky=W, **paddings)
 #botão pra escolher cores
-botao_cor = Button(root, text = "Escolher cor", command = escolher_cor)
-botao_cor.pack()
+botao_cor_borda = Button(frame, text = "Cor da Borda", command = escolher_cor_borda)
+botao_cor_borda.grid(column=0, row=1, sticky=W, **paddings)
+botao_cor_preenchimento = Button(frame, text = "Preenchimento", command = escolher_cor_preenchimento)
+botao_cor_preenchimento.grid(column=1, row=1, sticky=W, **paddings)
 frame.pack()
 
 # Eventos de mouse associados ao canvas - com seus callbacks
