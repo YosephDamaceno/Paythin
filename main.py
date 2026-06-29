@@ -36,6 +36,16 @@ def iniciar_figura_nova(event):
 
     elif tipo == 'Círculo':
         figura_nova = Circulo(event.x, event.y, event.x, event.y, cor_atual, background)
+
+    elif tipo == 'Triângulo':
+        figura_nova = Triangulo(event.x, event.y, event.x, event.y, cor_atual, background)
+
+    elif tipo == 'Pentágono':
+        figura_nova = Pentagono(event.x, event.y, event.x, event.y, cor_atual, background)
+
+    elif tipo == 'Hexágono':
+        figura_nova = Hexagono(event.x, event.y, event.x, event.y, cor_atual, background)
+
     else:
         figura_nova =  Rabisco(event.x, event.y, cor_atual)
 
@@ -103,7 +113,10 @@ option_menu = ttk.OptionMenu(
     'Rabisco',
     'Retângulo',
     'Oval',
-    'Círculo'
+    'Círculo',
+    'Triângulo',
+    'Pentágono',
+    'Hexágono'
 )
 
 option_menu.grid(column=1, row=0, sticky=W, **paddings)
@@ -115,8 +128,10 @@ canvas.grid(column=0, row=3, columnspan=2, sticky=W, **paddings)
 #botão pra escolher cores
 botao_cor_borda = Button(frame, text = "Cor da Borda", command = escolher_cor_borda)
 botao_cor_borda.grid(column=0, row=1, sticky=W, **paddings)
+
 botao_cor_preenchimento = Button(frame, text = "Preenchimento", command = escolher_cor_preenchimento)
 botao_cor_preenchimento.grid(column=1, row=1, sticky=W, **paddings)
+
 frame.pack()
 
 # Eventos de mouse associados ao canvas - com seus callbacks
