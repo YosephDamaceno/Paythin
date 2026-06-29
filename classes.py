@@ -40,6 +40,7 @@ class Retangulo(Figura):
         canvas.create_rectangle(self.x1, self.y1, self.x2, self.y2, outline = self.cor_borda, fill = self.cor_preenchimento)
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
+
 class Oval(Figura):
     def desenhar(self, canvas):
         canvas.create_oval(self.x1, self.y1, self.x2, self.y2, outline = self.cor_borda, fill = self.cor_preenchimento)
@@ -57,5 +58,35 @@ class Circulo(Figura):
         self.y2 = tamanho + self.y1 if dy >= 0 else self.y1 - tamanho
     def desenhar(self, canvas):
         canvas.create_oval(self.x1, self.y1, self.x2, self.y2, outline = self.cor_borda, fill = self.cor_preenchimento)
+    def incompleta(self):
+        return self.x1 == self.x2 and self.y1 == self.y2
+
+class Triangulo(Figura):
+    def desenhar(self, canvas):
+        pontos = [(self.x1 + self.x2)/2, self.y1, self.x1, self.y2, self.x2, self.y2]
+        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento)
+    def incompleta(self):
+        return self.x1 == self.x2 and self.y1 == self.y2
+
+class Pentagono(Figura):
+    def desenhar(self, canvas):
+        pontos = [(self.x1 + self.x2)/2, self.y1,
+                  self.x1, (self.y1 + self.y2)/2,
+                  self.x1 + (self.x2-self.x1)*0.2, self.y2,
+                  self.x2 - (self.x2-self.x1)*0.2, self.y2,
+                  self.x2, (self.y1 + self.y2)/2]
+        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento)
+    def incompleta(self):
+        return self.x1 == self.x2 and self.y1 == self.y2
+
+class Hexagono(Figura):
+    def desenhar(self, canvas):
+        pontos = [self.x1 + (self.x2-self.x1)*0.25, self.y1,
+                  self.x2 - (self.x2-self.x1)*0.25, self.y1,
+                  self.x2, (self.y1+self.y2)/2,
+                  self.x2 - (self.x2-self.x1)*0.25, self.y2,
+                  self.x1 + (self.x2-self.x1)*0.25, self.y2,
+                  self.x1, (self.y1+self.y2)/2]
+        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento)
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
