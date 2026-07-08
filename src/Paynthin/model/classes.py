@@ -113,7 +113,7 @@ class Desenho:
             self.figura_nova = Rabisco(x, y, cor_borda) 
         return self.figura_nova
     def atualizar_figura_nova(self, x, y):
-        if self.figura_nova is not None:
+        if self.figura_nova is None:
             return
         self.figura_nova.atualizar(x, y)       
     def incluir_figura_nova(self):
