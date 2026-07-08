@@ -64,7 +64,7 @@ class Circulo(Figura):
 class Triangulo(Figura):
     def desenhar(self, canvas):
         pontos = [(self.x1 + self.x2)/2, self.y1, self.x1, self.y2, self.x2, self.y2]
-        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento)
+        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
 
@@ -75,7 +75,7 @@ class Pentagono(Figura):
                   self.x1 + (self.x2-self.x1)*0.2, self.y2,
                   self.x2 - (self.x2-self.x1)*0.2, self.y2,
                   self.x2, (self.y1 + self.y2)/2]
-        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento)
+        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
 
@@ -87,7 +87,7 @@ class Hexagono(Figura):
                   self.x2 - (self.x2-self.x1)*0.25, self.y2,
                   self.x1 + (self.x2-self.x1)*0.25, self.y2,
                   self.x1, (self.y1+self.y2)/2]
-        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento)
+        canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
     
