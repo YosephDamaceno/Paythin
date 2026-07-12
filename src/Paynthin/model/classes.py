@@ -16,6 +16,13 @@ class Figura:
         self.y2 = y2
     def incompleta(self): #pra não precisar da função separada depois
         raise NotImplementedError('Deve ser implementado pela classe')
+    #Adicionando a percistência
+    def _dict(self):
+        return {'tipo': self.__class__.__name__,
+                'x1': self.x1,
+                  'y1': self.y1,
+                    'x2': self.x2,
+                      'y2': self.y2 }
 
 #Subclasses
 class Linha(Figura):
