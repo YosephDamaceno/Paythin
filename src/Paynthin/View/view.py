@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import colorchooser
+from tkinter import filedialog
+from tkinter import messagebox
 
 class View:
     def __init__(self):
@@ -8,7 +10,13 @@ class View:
         self.background = None
 
         self.root = Tk()
-        self.root.title('Terceira entrega do Projeto POO')
+        self.root.title('Quarta entrega do Projeto POO')
+
+        #Parte da persistência, menu Arquivo (Salvar/Abrir)
+        self.menu_bar = Menu(self.root)
+        self.menu_arquivo = Menu(self.menu_bar, tearoff=0)
+        self.menu_bar.add_cascade(label='Arquivo', menu=self.menu_arquivo)
+        self.root.config(menu=self.menu_bar)
 
         self.frame = Frame(self.root)
 
@@ -73,6 +81,26 @@ class View:
         self.canvas.delete("all")
         for figura in figuras:
             figura.desenhar(self.canvas)
+
+    #Persistência
+    def comandos_arquivos(self, comando_salvar, comando_abrir):
+        #o Controller chama isso passando suas próprias funções (comando_salvar, comando_abrir)
+        self.menu_arquivo.add_command(label = 'Salvar', command = comando_salvar)
+        self.menu_arquivo.add_command(label = 'Abrir',  command = comando_abrir)
+
+    def pedir_caminho_salvar(self):
+        caminho = filedialog.asksaveasfilename(defaultextension = ".json",
+        filetypes=[("Arquivos JSON", "*.json")],
+        title= "Salvar desenho como:")
+
+    def pedir_caminho_abrir(self):
+        caminho = filedialog.askopenfilename(defaultextension=".json",
+        filetypes=[("Arquivos JSON", "*.json")],
+        title="Abrir desenho:")
+
+    def mostrar_erro(self, mensagem):
+        messagebox.showerror("Erro", mensagem)
+
 
     def iniciar(self):
         self.root.mainloop()
