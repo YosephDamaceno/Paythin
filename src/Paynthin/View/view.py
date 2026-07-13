@@ -5,6 +5,17 @@ from tkinter import filedialog
 from tkinter import messagebox
 
 class View:
+
+    '''
+    Classe responsável por mostrar na tela a parte de
+    interatividade com o usuário. Recebe os comandos
+    selecionados na interface, que posteriormente serão
+    passados ao Controller e ao Model.
+
+    @author Luciano Davi
+    @version 1.0
+    '''
+
     def __init__(self):
         self.cor_atual = 'black'
         self.background = None

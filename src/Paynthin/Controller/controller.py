@@ -3,6 +3,16 @@ from model.classes import Desenho
 from View import view
 
 class Controller:
+    '''
+    Classe responsável por intermediar as interações
+    entre a View e o Model do programa. Gerencia as
+    solicitações que serão feitas na View com as respostas
+    vindas do Model nos seus métodos específicos.
+
+    @author Jayk Abreu
+    @version 1.0
+    '''
+
     def __init__(self, view):
         self.view = view
         self.Desenho = Desenho()

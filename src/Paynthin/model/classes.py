@@ -2,6 +2,17 @@
 import json
 #Classe base
 class Figura:
+    '''
+    Classe base que define os parâmetros que
+    as figuras específicas herdarão. 
+    
+    Responsável por atribuir propriedades comuns
+    para todas as figuras que serão trabalhadas.
+
+    @author Yoseph Damaceno
+    @version 1.0
+    '''
+
     def __init__(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None):
         self.x1 = x1
         self.y1 = y1
@@ -40,12 +51,34 @@ class Figura:
 
 #Subclasses
 class Linha(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura. 
+    
+    É responsável por representar uma
+    linha na área de desenho.
+
+    @author Mai Ly
+    @version 1.0
+    '''
+
     def desenhar(self, canvas):
         canvas.create_line(self.x1, self.y1, self.x2, self.y2, fill = self.cor_borda)
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2 
 
 class Rabisco(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura. 
+    
+    É responsável por representar um
+    rabisco contínuo na área de desenho.
+
+    @author Mai Ly
+    @version 1.0
+    '''
+
     def __init__(self, x, y, cor_borda):
         super().__init__(x, y, x, y, cor_borda) #aqui a gnt importa o x1, x2... mas o rabisco começa com um ponto só 
         self.pontos = [(x, y)]
@@ -71,18 +104,51 @@ class Rabisco(Figura):
         return figura
 
 class Retangulo(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura e define uma figura específica. 
+    
+    É responsável por representar a figura
+    de um retângulo na área de desenho.
+
+    @author Jayk Abreu
+    @version 1.0
+    '''
+
     def desenhar(self, canvas):
         canvas.create_rectangle(self.x1, self.y1, self.x2, self.y2, outline = self.cor_borda, fill = self.cor_preenchimento)
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Oval(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura e define uma figura específica. 
+    
+    É responsável por representar a figura
+    de um oval/elipse na área de desenho.
+
+    @author Luciano Davi
+    @version 1.0
+    '''
+
     def desenhar(self, canvas):
         canvas.create_oval(self.x1, self.y1, self.x2, self.y2, outline = self.cor_borda, fill = self.cor_preenchimento)
     def incompleta(self):
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Circulo(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura e define uma figura específica. 
+    
+    É responsável por representar a figura
+    de um círculo na área de desenho.
+
+    @author Yoseph Damaceno
+    @version 1.0
+    '''
+
     def atualizar(self, x2, y2):
         dx = x2 - self.x1
         dy = y2 - self.y1
@@ -97,6 +163,17 @@ class Circulo(Figura):
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Triangulo(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura e define uma figura específica. 
+    
+    É responsável por representar a figura
+    de um triângulo na área de desenho.
+
+    @author Luciano Davi
+    @version 1.0
+    '''
+
     def desenhar(self, canvas):
         pontos = [(self.x1 + self.x2)/2, self.y1, self.x1, self.y2, self.x2, self.y2]
         canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
@@ -104,6 +181,17 @@ class Triangulo(Figura):
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Pentagono(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura e define uma figura específica. 
+    
+    É responsável por representar a figura
+    de um pentágono na área de desenho.
+
+    @author Luciano Davi
+    @version 1.0
+    '''
+
     def desenhar(self, canvas):
         pontos = [(self.x1 + self.x2)/2, self.y1,
                   self.x1, (self.y1 + self.y2)/2,
@@ -115,6 +203,17 @@ class Pentagono(Figura):
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Hexagono(Figura):
+    '''
+    Classe que herda os parâmetros da Classe
+    figura e define uma figura específica. 
+    
+    É responsável por representar a figura
+    de um hexágono na área de desenho.
+
+    @author Luciano Davi
+    @version 1.0
+    '''
+
     def desenhar(self, canvas):
         pontos = [self.x1 + (self.x2-self.x1)*0.25, self.y1,
                   self.x2 - (self.x2-self.x1)*0.25, self.y1,
@@ -140,6 +239,17 @@ tipo_figura = {
 
 # Como já inclui os tipos, agora posso criar a classe Desenho
 class Desenho:
+    '''
+    Classe base que define tudo que está relacionado
+    a desenhar na área de desenho.
+
+    Responsável por específicar quais métodos serão
+    utilizados para diferentes ações na área do canvas.
+
+    @author Yoseph Damaceno
+    @version 1.0
+    '''
+
     def __init__(self):
         self.figuras = []
         self.figura_nova = None
