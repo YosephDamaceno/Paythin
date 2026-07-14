@@ -35,12 +35,12 @@ em formato **JSON**, através das opções **"Salvar"** e **"Abrir"** no menu **
 
 ## Como Visualizar a Documentação
 A documentação HTML do sistema já foi gerada com a ferramenta **Pydoc** e está disponível nos arquivos:
-- `classes.html`
-- `view.html`
-- `controller.html`
+- `Paynthin.model.classes.html`
+- `Paynthin.View.view.html`
+- `Paynthin.Controller.controller.html`
 
 Para visualizar:
-1. Localize os arquivos `.html` mencionados acima na pasta docs que está localizada na src\Paythin.
+1. Localize os arquivos `.html` mencionados acima na pasta do projeto.
 2. Dê duplo clique em qualquer um deles (ou clique com o botão direito → "Abrir com" → seu navegador de preferência).
 3. A documentação será exibida no navegador, mostrando as classes, métodos e docstrings de cada módulo.
 
