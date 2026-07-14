@@ -333,6 +333,17 @@ class Circulo(Figura):
     '''
 
     def atualizar(self, x2, y2):
+        '''
+        Atualiza as dimensões do círculo.
+
+        Recebe as novas coordenadas da área
+        de desenho e ajusta o tamanho do
+        círculo mantendo suas proporções.
+
+        @param x2: coordenada final no eixo x.
+        @param y2: coordenada final no eixo y.
+        '''
+
         dx = x2 - self.x1
         dy = y2 - self.y1
 
@@ -341,8 +352,25 @@ class Circulo(Figura):
         self.x2 = tamanho + self.x1 if dx >= 0 else self.x1 - tamanho
         self.y2 = tamanho + self.y1 if dy >= 0 else self.y1 - tamanho
     def desenhar(self, canvas):
+        '''
+        Desenha um círculo na área de desenho.
+
+        @param canvas: área onde o círculo
+        será desenhado.
+
+        @see Figura.desenhar
+        '''
+
         canvas.create_oval(self.x1, self.y1, self.x2, self.y2, outline = self.cor_borda, fill = self.cor_preenchimento)
     def incompleta(self):
+        '''
+        Verifica se o círculo foi desenhado.
+
+        @return True caso o círculo ainda
+        esteja incompleto e False caso
+        contrário.
+        '''
+
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Triangulo(Figura):
@@ -358,9 +386,26 @@ class Triangulo(Figura):
     '''
 
     def desenhar(self, canvas):
+        '''
+        Desenha um triângulo na área de desenho.
+
+        @param canvas: área onde o triângulo
+        será desenhado.
+
+        @see Figura.desenhar
+        '''
+
         pontos = [(self.x1 + self.x2)/2, self.y1, self.x1, self.y2, self.x2, self.y2]
         canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
     def incompleta(self):
+        '''
+        Verifica se o triângulo foi desenhado.
+
+        @return True caso o triângulo ainda
+        esteja incompleto e False caso
+        contrário.
+        '''
+
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Pentagono(Figura):
@@ -376,6 +421,15 @@ class Pentagono(Figura):
     '''
 
     def desenhar(self, canvas):
+        '''
+        Desenha um pentágono na área de desenho.
+
+        @param canvas: área onde o pentágono
+        será desenhado.
+
+        @see Figura.desenhar
+        '''
+
         pontos = [(self.x1 + self.x2)/2, self.y1,
                   self.x1, (self.y1 + self.y2)/2,
                   self.x1 + (self.x2-self.x1)*0.2, self.y2,
@@ -383,6 +437,14 @@ class Pentagono(Figura):
                   self.x2, (self.y1 + self.y2)/2]
         canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
     def incompleta(self):
+        '''
+        Verifica se o pentágono foi desenhado.
+
+        @return True caso o pentágono ainda
+        esteja incompleto e False caso
+        contrário.
+        '''
+
         return self.x1 == self.x2 and self.y1 == self.y2
 
 class Hexagono(Figura):
@@ -398,6 +460,15 @@ class Hexagono(Figura):
     '''
 
     def desenhar(self, canvas):
+        '''
+        Desenha um hexágono na área de desenho.
+
+        @param canvas: área onde o hexágono
+        será desenhado.
+
+        @see Figura.desenhar
+        '''
+
         pontos = [self.x1 + (self.x2-self.x1)*0.25, self.y1,
                   self.x2 - (self.x2-self.x1)*0.25, self.y1,
                   self.x2, (self.y1+self.y2)/2,
@@ -406,6 +477,14 @@ class Hexagono(Figura):
                   self.x1, (self.y1+self.y2)/2]
         canvas.create_polygon(pontos, outline = self.cor_borda, fill = self.cor_preenchimento if self.cor_preenchimento else '') #concertado
     def incompleta(self):
+        '''
+        Verifica se o hexágono foi desenhado.
+
+        @return True caso o hexágono ainda
+        esteja incompleto e False caso
+        contrário.
+        '''
+        
         return self.x1 == self.x2 and self.y1 == self.y2
 #registrando as classes por nome, pra poder reconstruir depois
 classes_nome = { classe.__name__: classe
@@ -437,6 +516,24 @@ class Desenho:
         self.figuras = []
         self.figura_nova = None
     def iniciar_figura_nova(self, x, y, tipo, cor_borda, cor_preenchimento):
+        '''
+        Inicia a criação de uma nova figura.
+
+        Recebe as informações necessárias para
+        criar a figura escolhida.
+
+        @param x: coordenada inicial no eixo x.
+        @param y: coordenada inicial no eixo y.
+        @param tipo: tipo da figura escolhida.
+        @param cor_borda: cor da borda da figura.
+        @param cor_preenchimento: cor de preenchimento
+        da figura.
+
+        @return Figura criada.
+
+        @see atualizar_figura_nova
+        '''
+
         classe = tipo_figura.get(tipo)
         if classe is not None:
             self.figura_nova = classe(x, y, x, y, cor_borda, cor_preenchimento)
@@ -444,26 +541,79 @@ class Desenho:
             self.figura_nova = Rabisco(x, y, cor_borda) 
         return self.figura_nova
     def atualizar_figura_nova(self, x, y):
+        '''
+        Atualiza a figura que está sendo criada.
+
+        Recebe as novas coordenadas da área
+        de desenho e altera suas dimensões.
+
+        @param x: coordenada atual no eixo x.
+        @param y: coordenada atual no eixo y.
+
+        @see iniciar_figura_nova
+        '''
+
         if self.figura_nova is None:
             return
         self.figura_nova.atualizar(x, y)       
     def incluir_figura_nova(self):
+        '''
+        Adiciona a figura criada à lista de figuras.
+
+        Caso a figura esteja completa, ela será
+        armazenada para ser exibida posteriormente.
+
+        @see desenhar_figuras
+        '''
+
         if self.figura_nova is None:
             return 
         if not self.figura_nova.incompleta():
             self.figuras.append(self.figura_nova)
         self.figura_nova = None
     def desenhar_figuras(self, canvas): #aqui é pra gnt garantir que todas as figuras(concluidas e em andamento) seja mostrada 
+        '''
+        Retorna todas as figuras que devem ser
+        exibidas na área de desenho.
+
+        @param canvas: área de desenho utilizada
+        pela interface.
+
+        @return Lista contendo todas as figuras
+        que devem ser desenhadas.
+        '''
+
         if self.figura_nova is not None:
             return self.figuras + [self.figura_nova] 
         else:
             return self.figuras
     #Persistência
     def salvar(self, endereco_arq):
+        '''
+        Salva todas as figuras em um arquivo.
+
+        @param endereco_arq: caminho onde o
+        arquivo será salvo.
+
+        @see carregar
+        '''
+        
         dados = [ figura._dict() for figura in self.figuras]
         with open(endereco_arq, 'w', encoding='utf-8') as arquivo:
             json.dump(dados, arquivo, ensure_ascii=False, indent=4)
     def carregar(self, endereco_arq):
+        '''
+        Carrega as figuras de um arquivo.
+
+        Lê os dados armazenados e recria as
+        figuras na área de desenho.
+
+        @param endereco_arq: caminho do arquivo
+        que será carregado.
+
+        @see salvar
+        '''
+
         with open(endereco_arq, 'r', encoding='utf-8') as arquivo:
             dados = json.load(arquivo)
             self.figuras = [Figura.from_dict(item) for item in dados]
