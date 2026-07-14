@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module model.classes</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="model.html" class="white">model</a>.classes</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/jayk/%C3%81rea%20de%20trabalho/Entrega%20Projeto/Paythin/src/Paynthin/model/classes.py">/home/jayk/Área de trabalho/Entrega Projeto/Paythin/src/Paynthin/model/classes.py</a></td></tr></table>
+    <p><span class="code">#Aqui&nbsp;ficarão&nbsp;as&nbsp;classes&nbsp;que&nbsp;permitem&nbsp;criar&nbsp;as&nbsp;figuras</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="json.html">json</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="model.classes.html#Desenho">Desenho</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Figura">Figura</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="model.classes.html#Circulo">Circulo</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Hexagono">Hexagono</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Linha">Linha</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Oval">Oval</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Pentagono">Pentagono</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Rabisco">Rabisco</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Retangulo">Retangulo</a>
+</dt><dt class="heading-text"><a href="model.classes.html#Triangulo">Triangulo</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Circulo">class <strong>Circulo</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Circulo">Circulo</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;Classe<br>
+figura&nbsp;e&nbsp;define&nbsp;uma&nbsp;figura&nbsp;específica.&nbsp;<br>
+&nbsp;<br>
+É&nbsp;responsável&nbsp;por&nbsp;representar&nbsp;a&nbsp;figura<br>
+de&nbsp;um&nbsp;círculo&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Circulo">Circulo</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Circulo-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;dimensões&nbsp;do&nbsp;círculo.<br>
+&nbsp;<br>
+Recebe&nbsp;as&nbsp;novas&nbsp;coordenadas&nbsp;da&nbsp;área<br>
+de&nbsp;desenho&nbsp;e&nbsp;ajusta&nbsp;o&nbsp;tamanho&nbsp;do<br>
+círculo&nbsp;mantendo&nbsp;suas&nbsp;proporções.<br>
+&nbsp;<br>
+@param&nbsp;x2:&nbsp;coordenada&nbsp;final&nbsp;no&nbsp;eixo&nbsp;x.<br>
+@param&nbsp;y2:&nbsp;coordenada&nbsp;final&nbsp;no&nbsp;eixo&nbsp;y.</span></dd></dl>
+
+<dl><dt><a name="Circulo-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;um&nbsp;círculo&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;área&nbsp;onde&nbsp;o&nbsp;círculo<br>
+será&nbsp;desenhado.<br>
+&nbsp;<br>
+@see&nbsp;<a href="#Figura">Figura</a>.desenhar</span></dd></dl>
+
+<dl><dt><a name="Circulo-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;círculo&nbsp;foi&nbsp;desenhado.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;círculo&nbsp;ainda<br>
+esteja&nbsp;incompleto&nbsp;e&nbsp;False&nbsp;caso<br>
+contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Circulo-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Circulo-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Circulo-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Desenho">class <strong>Desenho</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Classe&nbsp;base&nbsp;que&nbsp;define&nbsp;tudo&nbsp;que&nbsp;está&nbsp;relacionado<br>
+a&nbsp;desenhar&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+Responsável&nbsp;por&nbsp;específicar&nbsp;quais&nbsp;métodos&nbsp;serão<br>
+utilizados&nbsp;para&nbsp;diferentes&nbsp;ações&nbsp;na&nbsp;área&nbsp;do&nbsp;canvas.<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Desenho-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Desenho-atualizar_figura_nova"><strong>atualizar_figura_nova</strong></a>(self, x, y)</dt><dd><span class="code">Atualiza&nbsp;a&nbsp;figura&nbsp;que&nbsp;está&nbsp;sendo&nbsp;criada.<br>
+&nbsp;<br>
+Recebe&nbsp;as&nbsp;novas&nbsp;coordenadas&nbsp;da&nbsp;área<br>
+de&nbsp;desenho&nbsp;e&nbsp;altera&nbsp;suas&nbsp;dimensões.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;coordenada&nbsp;atual&nbsp;no&nbsp;eixo&nbsp;x.<br>
+@param&nbsp;y:&nbsp;coordenada&nbsp;atual&nbsp;no&nbsp;eixo&nbsp;y.<br>
+&nbsp;<br>
+@see&nbsp;iniciar_figura_nova</span></dd></dl>
+
+<dl><dt><a name="Desenho-carregar"><strong>carregar</strong></a>(self, endereco_arq)</dt><dd><span class="code">Carrega&nbsp;as&nbsp;figuras&nbsp;de&nbsp;um&nbsp;arquivo.<br>
+&nbsp;<br>
+Lê&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;e&nbsp;recria&nbsp;as<br>
+figuras&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;endereco_arq:&nbsp;caminho&nbsp;do&nbsp;arquivo<br>
+que&nbsp;será&nbsp;carregado.<br>
+&nbsp;<br>
+@see&nbsp;salvar</span></dd></dl>
+
+<dl><dt><a name="Desenho-desenhar_figuras"><strong>desenhar_figuras</strong></a>(self, canvas)</dt><dd><span class="code">Retorna&nbsp;todas&nbsp;as&nbsp;figuras&nbsp;que&nbsp;devem&nbsp;ser<br>
+exibidas&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;área&nbsp;de&nbsp;desenho&nbsp;utilizada<br>
+pela&nbsp;interface.<br>
+&nbsp;<br>
+@return&nbsp;Lista&nbsp;contendo&nbsp;todas&nbsp;as&nbsp;figuras<br>
+que&nbsp;devem&nbsp;ser&nbsp;desenhadas.</span></dd></dl>
+
+<dl><dt><a name="Desenho-incluir_figura_nova"><strong>incluir_figura_nova</strong></a>(self)</dt><dd><span class="code">Adiciona&nbsp;a&nbsp;figura&nbsp;criada&nbsp;à&nbsp;lista&nbsp;de&nbsp;figuras.<br>
+&nbsp;<br>
+Caso&nbsp;a&nbsp;figura&nbsp;esteja&nbsp;completa,&nbsp;ela&nbsp;será<br>
+armazenada&nbsp;para&nbsp;ser&nbsp;exibida&nbsp;posteriormente.<br>
+&nbsp;<br>
+@see&nbsp;desenhar_figuras</span></dd></dl>
+
+<dl><dt><a name="Desenho-iniciar_figura_nova"><strong>iniciar_figura_nova</strong></a>(self, x, y, tipo, cor_borda, cor_preenchimento)</dt><dd><span class="code">Inicia&nbsp;a&nbsp;criação&nbsp;de&nbsp;uma&nbsp;nova&nbsp;figura.<br>
+&nbsp;<br>
+Recebe&nbsp;as&nbsp;informações&nbsp;necessárias&nbsp;para<br>
+criar&nbsp;a&nbsp;figura&nbsp;escolhida.<br>
+&nbsp;<br>
+@param&nbsp;x:&nbsp;coordenada&nbsp;inicial&nbsp;no&nbsp;eixo&nbsp;x.<br>
+@param&nbsp;y:&nbsp;coordenada&nbsp;inicial&nbsp;no&nbsp;eixo&nbsp;y.<br>
+@param&nbsp;tipo:&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;escolhida.<br>
+@param&nbsp;cor_borda:&nbsp;cor&nbsp;da&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento:&nbsp;cor&nbsp;de&nbsp;preenchimento<br>
+da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;<a href="#Figura">Figura</a>&nbsp;criada.<br>
+&nbsp;<br>
+@see&nbsp;atualizar_figura_nova</span></dd></dl>
+
+<dl><dt><a name="Desenho-salvar"><strong>salvar</strong></a>(self, endereco_arq)</dt><dd><span class="code">Salva&nbsp;todas&nbsp;as&nbsp;figuras&nbsp;em&nbsp;um&nbsp;arquivo.<br>
+&nbsp;<br>
+@param&nbsp;endereco_arq:&nbsp;caminho&nbsp;onde&nbsp;o<br>
+arquivo&nbsp;será&nbsp;salvo.<br>
+&nbsp;<br>
+@see&nbsp;carregar</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Figura">class <strong>Figura</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Figura">Figura</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;base&nbsp;que&nbsp;define&nbsp;os&nbsp;parâmetros&nbsp;comuns&nbsp;das&nbsp;figuras&nbsp;do&nbsp;sistema.<br>
+&nbsp;<br>
+Sua&nbsp;responsabilidade&nbsp;é&nbsp;fornecer&nbsp;os&nbsp;atributos&nbsp;e&nbsp;métodos&nbsp;que&nbsp;serão<br>
+herdados&nbsp;por&nbsp;todas&nbsp;as&nbsp;figuras&nbsp;geométricas&nbsp;implementadas&nbsp;no&nbsp;sistema.<br>
+&nbsp;<br>
+Informações&nbsp;relevantes:<br>
+Esta&nbsp;classe&nbsp;não&nbsp;deve&nbsp;ser&nbsp;utilizada&nbsp;diretamente&nbsp;para&nbsp;criação&nbsp;de<br>
+objetos,&nbsp;servindo&nbsp;apenas&nbsp;como&nbsp;base&nbsp;para&nbsp;as&nbsp;subclasses.<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Figura-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Figura-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<dl><dt><a name="Figura-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Define&nbsp;o&nbsp;método&nbsp;responsável&nbsp;por&nbsp;desenhar&nbsp;a&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;canvas&nbsp;Área&nbsp;de&nbsp;desenho&nbsp;onde&nbsp;a&nbsp;figura&nbsp;será&nbsp;desenhada.<br>
+&nbsp;<br>
+Observação:<br>
+Este&nbsp;método&nbsp;deve&nbsp;ser&nbsp;implementado&nbsp;obrigatoriamente&nbsp;pelas<br>
+subclasses.</span></dd></dl>
+
+<dl><dt><a name="Figura-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;figura&nbsp;está&nbsp;incompleta.<br>
+&nbsp;<br>
+@return&nbsp;Valor&nbsp;booleano&nbsp;indicando&nbsp;se&nbsp;a&nbsp;figura&nbsp;ainda&nbsp;não&nbsp;pode&nbsp;ser<br>
+considerada&nbsp;concluída.<br>
+&nbsp;<br>
+Observação:<br>
+Este&nbsp;método&nbsp;deve&nbsp;ser&nbsp;implementado&nbsp;pelas&nbsp;subclasses.</span></dd></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Figura-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Figura-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Hexagono">class <strong>Hexagono</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Hexagono">Hexagono</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;Classe<br>
+figura&nbsp;e&nbsp;define&nbsp;uma&nbsp;figura&nbsp;específica.&nbsp;<br>
+&nbsp;<br>
+É&nbsp;responsável&nbsp;por&nbsp;representar&nbsp;a&nbsp;figura<br>
+de&nbsp;um&nbsp;hexágono&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@author&nbsp;Luciano&nbsp;Davi<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Hexagono">Hexagono</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Hexagono-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;um&nbsp;hexágono&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;área&nbsp;onde&nbsp;o&nbsp;hexágono<br>
+será&nbsp;desenhado.<br>
+&nbsp;<br>
+@see&nbsp;<a href="#Figura">Figura</a>.desenhar</span></dd></dl>
+
+<dl><dt><a name="Hexagono-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;hexágono&nbsp;foi&nbsp;desenhado.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;hexágono&nbsp;ainda<br>
+esteja&nbsp;incompleto&nbsp;e&nbsp;False&nbsp;caso<br>
+contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Hexagono-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Hexagono-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Hexagono-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Hexagono-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Linha">class <strong>Linha</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Linha">Linha</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;representa&nbsp;uma&nbsp;linha.<br>
+&nbsp;<br>
+Sua&nbsp;responsabilidade&nbsp;é&nbsp;armazenar&nbsp;e&nbsp;desenhar&nbsp;uma&nbsp;linha&nbsp;na&nbsp;área<br>
+de&nbsp;desenho&nbsp;utilizando&nbsp;os&nbsp;atributos&nbsp;herdados&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+Informações&nbsp;relevantes:<br>
+A&nbsp;linha&nbsp;é&nbsp;considerada&nbsp;completa&nbsp;quando&nbsp;possui&nbsp;comprimento<br>
+diferente&nbsp;de&nbsp;zero.<br>
+&nbsp;<br>
+@author&nbsp;Mai&nbsp;Ly<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Linha">Linha</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Linha-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;uma&nbsp;linha&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas&nbsp;Área&nbsp;onde&nbsp;a&nbsp;linha&nbsp;será&nbsp;desenhada.</span></dd></dl>
+
+<dl><dt><a name="Linha-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;a&nbsp;linha&nbsp;possui&nbsp;comprimento&nbsp;válido.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;a&nbsp;linha&nbsp;esteja&nbsp;incompleta&nbsp;ou&nbsp;False&nbsp;caso<br>
+contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Linha-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Linha-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Linha-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Linha-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Oval">class <strong>Oval</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Oval">Oval</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>&nbsp;e<br>
+representa&nbsp;um&nbsp;oval.<br>
+&nbsp;<br>
+Sua&nbsp;responsabilidade&nbsp;é&nbsp;desenhar&nbsp;um&nbsp;oval&nbsp;(elipse)<br>
+na&nbsp;área&nbsp;de&nbsp;desenho&nbsp;utilizando&nbsp;as&nbsp;coordenadas<br>
+fornecidas.<br>
+&nbsp;<br>
+Informações&nbsp;relevantes:<br>
+O&nbsp;oval&nbsp;pode&nbsp;possuir&nbsp;cor&nbsp;de&nbsp;borda&nbsp;e,<br>
+opcionalmente,&nbsp;cor&nbsp;de&nbsp;preenchimento.<br>
+&nbsp;<br>
+@author&nbsp;Luciano&nbsp;Davi<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Oval">Oval</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Oval-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;um&nbsp;oval&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas&nbsp;Área&nbsp;onde&nbsp;o&nbsp;oval&nbsp;será&nbsp;desenhado.</span></dd></dl>
+
+<dl><dt><a name="Oval-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;oval&nbsp;possui&nbsp;dimensões&nbsp;válidas.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;oval&nbsp;esteja&nbsp;incompleto&nbsp;ou<br>
+False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Oval-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Oval-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Oval-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Oval-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Pentagono">class <strong>Pentagono</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Pentagono">Pentagono</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;Classe<br>
+figura&nbsp;e&nbsp;define&nbsp;uma&nbsp;figura&nbsp;específica.&nbsp;<br>
+&nbsp;<br>
+É&nbsp;responsável&nbsp;por&nbsp;representar&nbsp;a&nbsp;figura<br>
+de&nbsp;um&nbsp;pentágono&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@author&nbsp;Luciano&nbsp;Davi<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Pentagono">Pentagono</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Pentagono-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;um&nbsp;pentágono&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;área&nbsp;onde&nbsp;o&nbsp;pentágono<br>
+será&nbsp;desenhado.<br>
+&nbsp;<br>
+@see&nbsp;<a href="#Figura">Figura</a>.desenhar</span></dd></dl>
+
+<dl><dt><a name="Pentagono-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;pentágono&nbsp;foi&nbsp;desenhado.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;pentágono&nbsp;ainda<br>
+esteja&nbsp;incompleto&nbsp;e&nbsp;False&nbsp;caso<br>
+contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Pentagono-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Pentagono-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Pentagono-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Pentagono-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Rabisco">class <strong>Rabisco</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Rabisco">Rabisco</a>(x,&nbsp;y,&nbsp;cor_borda)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>.<br>
+&nbsp;<br>
+Sua&nbsp;responsabilidade&nbsp;é&nbsp;representar&nbsp;um&nbsp;rabisco&nbsp;contínuo<br>
+na&nbsp;área&nbsp;de&nbsp;desenho,&nbsp;armazenando&nbsp;todos&nbsp;os&nbsp;pontos<br>
+percorridos&nbsp;pelo&nbsp;usuário.<br>
+&nbsp;<br>
+Informações&nbsp;relevantes:<br>
+Diferentemente&nbsp;das&nbsp;demais&nbsp;figuras,&nbsp;o&nbsp;rabisco&nbsp;é&nbsp;composto<br>
+por&nbsp;uma&nbsp;sequência&nbsp;de&nbsp;pontos&nbsp;e&nbsp;possui&nbsp;implementação<br>
+própria&nbsp;para&nbsp;persistência.<br>
+&nbsp;<br>
+@author&nbsp;Mai&nbsp;Ly<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Rabisco">Rabisco</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Rabisco-__init__"><strong>__init__</strong></a>(self, x, y, cor_borda)</dt><dd><span class="code">Inicializa&nbsp;um&nbsp;novo&nbsp;rabisco.<br>
+&nbsp;<br>
+@param&nbsp;x&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;primeiro&nbsp;ponto.<br>
+@param&nbsp;y&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;primeiro&nbsp;ponto.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;para&nbsp;desenhar&nbsp;o&nbsp;rabisco.</span></dd></dl>
+
+<dl><dt><a name="Rabisco-atualizar"><strong>atualizar</strong></a>(self, x, y)</dt><dd><span class="code">Adiciona&nbsp;um&nbsp;novo&nbsp;ponto&nbsp;ao&nbsp;rabisco.<br>
+&nbsp;<br>
+@param&nbsp;x&nbsp;Coordenada&nbsp;X&nbsp;do&nbsp;novo&nbsp;ponto.<br>
+@param&nbsp;y&nbsp;Coordenada&nbsp;Y&nbsp;do&nbsp;novo&nbsp;ponto.</span></dd></dl>
+
+<dl><dt><a name="Rabisco-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;o&nbsp;rabisco&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas&nbsp;Área&nbsp;onde&nbsp;o&nbsp;rabisco&nbsp;será&nbsp;desenhado.</span></dd></dl>
+
+<dl><dt><a name="Rabisco-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;rabisco&nbsp;possui&nbsp;pontos&nbsp;suficientes<br>
+para&nbsp;ser&nbsp;considerado&nbsp;válido.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;rabisco&nbsp;esteja&nbsp;incompleto&nbsp;ou<br>
+False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<dl><dt><a name="Rabisco-to_dict"><strong>to_dict</strong></a>(self)</dt><dd><span class="code">Converte&nbsp;o&nbsp;rabisco&nbsp;em&nbsp;um&nbsp;dicionário&nbsp;para&nbsp;possibilitar<br>
+sua&nbsp;serialização.<br>
+&nbsp;<br>
+@return&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;do&nbsp;rabisco.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Rabisco-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Rabisco-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Retangulo">class <strong>Retangulo</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Retangulo">Retangulo</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;classe&nbsp;<a href="#Figura">Figura</a>&nbsp;e<br>
+representa&nbsp;um&nbsp;retângulo.<br>
+&nbsp;<br>
+Sua&nbsp;responsabilidade&nbsp;é&nbsp;desenhar&nbsp;um&nbsp;retângulo&nbsp;na<br>
+área&nbsp;de&nbsp;desenho&nbsp;utilizando&nbsp;as&nbsp;coordenadas<br>
+fornecidas.<br>
+&nbsp;<br>
+Informações&nbsp;relevantes:<br>
+O&nbsp;retângulo&nbsp;pode&nbsp;possuir&nbsp;cor&nbsp;de&nbsp;borda&nbsp;e,<br>
+opcionalmente,&nbsp;cor&nbsp;de&nbsp;preenchimento.<br>
+&nbsp;<br>
+@author&nbsp;Jayk&nbsp;Abreu<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Retangulo">Retangulo</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Retangulo-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;um&nbsp;retângulo&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas&nbsp;Área&nbsp;onde&nbsp;o&nbsp;retângulo&nbsp;será&nbsp;desenhado.</span></dd></dl>
+
+<dl><dt><a name="Retangulo-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;retângulo&nbsp;possui&nbsp;dimensões&nbsp;válidas.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;retângulo&nbsp;esteja&nbsp;incompleto&nbsp;ou<br>
+False&nbsp;caso&nbsp;contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Retangulo-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Retangulo-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Retangulo-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Retangulo-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Triangulo">class <strong>Triangulo</strong></a>(<a href="model.classes.html#Figura">Figura</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Triangulo">Triangulo</a>(x1,&nbsp;y1,&nbsp;x2,&nbsp;y2,&nbsp;cor_borda,&nbsp;cor_preenchimento=None)<br>
+&nbsp;<br>
+Classe&nbsp;que&nbsp;herda&nbsp;os&nbsp;parâmetros&nbsp;da&nbsp;Classe<br>
+figura&nbsp;e&nbsp;define&nbsp;uma&nbsp;figura&nbsp;específica.&nbsp;<br>
+&nbsp;<br>
+É&nbsp;responsável&nbsp;por&nbsp;representar&nbsp;a&nbsp;figura<br>
+de&nbsp;um&nbsp;triângulo&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@author&nbsp;Luciano&nbsp;Davi<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.classes.html#Triangulo">Triangulo</a></dd>
+<dd><a href="model.classes.html#Figura">Figura</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Triangulo-desenhar"><strong>desenhar</strong></a>(self, canvas)</dt><dd><span class="code">Desenha&nbsp;um&nbsp;triângulo&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+@param&nbsp;canvas:&nbsp;área&nbsp;onde&nbsp;o&nbsp;triângulo<br>
+será&nbsp;desenhado.<br>
+&nbsp;<br>
+@see&nbsp;<a href="#Figura">Figura</a>.desenhar</span></dd></dl>
+
+<dl><dt><a name="Triangulo-incompleta"><strong>incompleta</strong></a>(self)</dt><dd><span class="code">Verifica&nbsp;se&nbsp;o&nbsp;triângulo&nbsp;foi&nbsp;desenhado.<br>
+&nbsp;<br>
+@return&nbsp;True&nbsp;caso&nbsp;o&nbsp;triângulo&nbsp;ainda<br>
+esteja&nbsp;incompleto&nbsp;e&nbsp;False&nbsp;caso<br>
+contrário.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Triangulo-__init__"><strong>__init__</strong></a>(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None)</dt><dd><span class="code">Inicializa&nbsp;os&nbsp;atributos&nbsp;básicos&nbsp;de&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x1&nbsp;Coordenada&nbsp;X&nbsp;inicial.<br>
+@param&nbsp;y1&nbsp;Coordenada&nbsp;Y&nbsp;inicial.<br>
+@param&nbsp;x2&nbsp;Coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Coordenada&nbsp;Y&nbsp;final.<br>
+@param&nbsp;cor_borda&nbsp;Cor&nbsp;utilizada&nbsp;na&nbsp;borda&nbsp;da&nbsp;figura.<br>
+@param&nbsp;cor_preenchimento&nbsp;Cor&nbsp;utilizada&nbsp;no&nbsp;preenchimento&nbsp;da&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Triangulo-atualizar"><strong>atualizar</strong></a>(self, x2, y2)</dt><dd><span class="code">Atualiza&nbsp;as&nbsp;coordenadas&nbsp;finais&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@param&nbsp;x2&nbsp;Nova&nbsp;coordenada&nbsp;X&nbsp;final.<br>
+@param&nbsp;y2&nbsp;Nova&nbsp;coordenada&nbsp;Y&nbsp;final.</span></dd></dl>
+
+<hr>
+Class methods inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><a name="Triangulo-from_dict"><strong>from_dict</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;a&nbsp;partir&nbsp;de&nbsp;um&nbsp;dicionário.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;dados&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Objeto&nbsp;correspondente&nbsp;à&nbsp;figura&nbsp;reconstruída.<br>
+&nbsp;<br>
+@throws&nbsp;ValueError&nbsp;Caso&nbsp;o&nbsp;tipo&nbsp;da&nbsp;figura&nbsp;não&nbsp;seja&nbsp;reconhecido.</span></dd></dl>
+
+<dl><dt><a name="Triangulo-from_dict_esp"><strong>from_dict_esp</strong></a>(dados)</dt><dd><span class="code">Reconstrói&nbsp;uma&nbsp;figura&nbsp;utilizando&nbsp;os&nbsp;dados&nbsp;armazenados&nbsp;no<br>
+dicionário&nbsp;recebido.<br>
+&nbsp;<br>
+@param&nbsp;dados&nbsp;Dicionário&nbsp;contendo&nbsp;os&nbsp;atributos&nbsp;da&nbsp;figura.<br>
+&nbsp;<br>
+@return&nbsp;Instância&nbsp;da&nbsp;figura&nbsp;reconstruída.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="model.classes.html#Figura">Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>classes_nome</strong> = {'Circulo': &lt;class 'model.classes.Circulo'&gt;, 'Hexagono': &lt;class 'model.classes.Hexagono'&gt;, 'Linha': &lt;class 'model.classes.Linha'&gt;, 'Oval': &lt;class 'model.classes.Oval'&gt;, 'Pentagono': &lt;class 'model.classes.Pentagono'&gt;, 'Rabisco': &lt;class 'model.classes.Rabisco'&gt;, 'Retangulo': &lt;class 'model.classes.Retangulo'&gt;, 'Triangulo': &lt;class 'model.classes.Triangulo'&gt;}<br>
+<strong>tipo_figura</strong> = {'Círculo': &lt;class 'model.classes.Circulo'&gt;, 'Hexágono': &lt;class 'model.classes.Hexagono'&gt;, 'Linha': &lt;class 'model.classes.Linha'&gt;, 'Oval': &lt;class 'model.classes.Oval'&gt;, 'Pentágono': &lt;class 'model.classes.Pentagono'&gt;, 'Retângulo': &lt;class 'model.classes.Retangulo'&gt;, 'Triângulo': &lt;class 'model.classes.Triangulo'&gt;}</td></tr></table>
+</body></html>

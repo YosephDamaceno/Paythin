@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Controller.controller</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="Controller.html" class="white">Controller</a>.controller</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/jayk/%C3%81rea%20de%20trabalho/Entrega%20Projeto/Paythin/src/Paynthin/Controller/controller.py">/home/jayk/Área de trabalho/Entrega Projeto/Paythin/src/Paynthin/Controller/controller.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="model.classes.html">model.classes</a><br>
+</td><td class="multicolumn"><a href="View.view.html">View.view</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Controller.controller.html#Controller">Controller</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Controller">class <strong>Controller</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Controller">Controller</a>(view)<br>
+&nbsp;<br>
+Classe&nbsp;responsável&nbsp;por&nbsp;intermediar&nbsp;as&nbsp;interações<br>
+entre&nbsp;a&nbsp;View&nbsp;e&nbsp;o&nbsp;Model&nbsp;do&nbsp;programa.&nbsp;Gerencia&nbsp;as<br>
+solicitações&nbsp;que&nbsp;serão&nbsp;feitas&nbsp;na&nbsp;View&nbsp;com&nbsp;as&nbsp;respostas<br>
+vindas&nbsp;do&nbsp;Model&nbsp;nos&nbsp;seus&nbsp;métodos&nbsp;específicos.<br>
+&nbsp;<br>
+@author&nbsp;Jayk&nbsp;Abreu<br>
+@version&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Controller-__init__"><strong>__init__</strong></a>(self, view)</dt><dd><span class="code">Inicializa&nbsp;o&nbsp;controlador&nbsp;estabelecendo&nbsp;a<br>
+ligação&nbsp;entre&nbsp;o&nbsp;View&nbsp;e&nbsp;o&nbsp;Model.&nbsp;Recebe&nbsp;também<br>
+os&nbsp;eventos&nbsp;de&nbsp;mouse&nbsp;que&nbsp;acontecem&nbsp;no&nbsp;View&nbsp;e<br>
+associa&nbsp;aos&nbsp;arquivos&nbsp;relacionados&nbsp;no&nbsp;Model.<br>
+&nbsp;<br>
+@param&nbsp;view:&nbsp;parte&nbsp;que&nbsp;é&nbsp;responsável<br>
+pela&nbsp;interface&nbsp;gráfica&nbsp;do&nbsp;programa.<br>
+&nbsp;<br>
+@see&nbsp;View</span></dd></dl>
+
+<dl><dt><a name="Controller-abrir"><strong>abrir</strong></a>(self)</dt><dd><span class="code">Abre&nbsp;um&nbsp;desenho&nbsp;salvo&nbsp;anteriormente.<br>
+&nbsp;<br>
+Solicita&nbsp;à&nbsp;View&nbsp;o&nbsp;arquivo&nbsp;que&nbsp;será&nbsp;aberto,<br>
+envia&nbsp;esse&nbsp;caminho&nbsp;para&nbsp;o&nbsp;Model&nbsp;carregar<br>
+as&nbsp;figuras&nbsp;e&nbsp;atualiza&nbsp;a&nbsp;tela.<br>
+&nbsp;<br>
+Caso&nbsp;ocorra&nbsp;algum&nbsp;erro&nbsp;durante&nbsp;o&nbsp;processo,<br>
+uma&nbsp;mensagem&nbsp;é&nbsp;exibida&nbsp;ao&nbsp;usuário.<br>
+&nbsp;<br>
+@see&nbsp;pedir_caminho_abrir<br>
+@see&nbsp;atualizar_tela<br>
+@see&nbsp;mostrar_erro</span></dd></dl>
+
+<dl><dt><a name="Controller-atualizar_figura_nova"><strong>atualizar_figura_nova</strong></a>(self, event)</dt><dd><span class="code">Esse&nbsp;método&nbsp;atualiza&nbsp;a&nbsp;figura&nbsp;que&nbsp;está&nbsp;sendo<br>
+desenhada&nbsp;na&nbsp;área&nbsp;de&nbsp;desenho.<br>
+&nbsp;<br>
+Ele&nbsp;recebe&nbsp;as&nbsp;informações&nbsp;do&nbsp;evento&nbsp;de&nbsp;botão<br>
+pressionado&nbsp;na&nbsp;interface&nbsp;e&nbsp;é&nbsp;responsável&nbsp;por<br>
+atualizar&nbsp;a&nbsp;tela&nbsp;sempre&nbsp;que&nbsp;seus&nbsp;valores<br>
+se&nbsp;alteram.<br>
+&nbsp;<br>
+@see&nbsp;Desenho.atualizar_figura_nova<br>
+@see&nbsp;atualizar_tela</span></dd></dl>
+
+<dl><dt><a name="Controller-atualizar_tela"><strong>atualizar_tela</strong></a>(self)</dt><dd><span class="code">Atualiza&nbsp;a&nbsp;tela&nbsp;da&nbsp;aplicação.<br>
+&nbsp;<br>
+Solicita&nbsp;ao&nbsp;Model&nbsp;todas&nbsp;as&nbsp;figuras&nbsp;que&nbsp;devem<br>
+ser&nbsp;exibidas&nbsp;e&nbsp;envia&nbsp;essas&nbsp;informações&nbsp;para<br>
+a&nbsp;View&nbsp;desenhá-las&nbsp;na&nbsp;tela.<br>
+&nbsp;<br>
+@see&nbsp;desenhar_figuras</span></dd></dl>
+
+<dl><dt><a name="Controller-buttonPress"><strong>buttonPress</strong></a>(self, event)</dt><dd><span class="code">Esse&nbsp;método&nbsp;é&nbsp;ativado&nbsp;quando&nbsp;o&nbsp;botão<br>
+esquerdo&nbsp;do&nbsp;mouse&nbsp;é&nbsp;pressionado.<br>
+&nbsp;<br>
+Ele&nbsp;recebe&nbsp;as&nbsp;informações&nbsp;do&nbsp;evento&nbsp;de&nbsp;botão&nbsp;<br>
+pressionado&nbsp;do&nbsp;View&nbsp;e&nbsp;é&nbsp;resposável&nbsp;por&nbsp;iniciar&nbsp;<br>
+figuras&nbsp;na&nbsp;interface.<br>
+&nbsp;<br>
+@param&nbsp;event:&nbsp;responsável&nbsp;por&nbsp;receber&nbsp;as<br>
+informações&nbsp;do&nbsp;clique&nbsp;na&nbsp;interface,&nbsp;nesse<br>
+caso,&nbsp;as&nbsp;coordenadas&nbsp;x&nbsp;e&nbsp;y&nbsp;iniciais.<br>
+&nbsp;<br>
+@see&nbsp;Desenho.iniciar_figura_nova<br>
+@see&nbsp;atualizar_tela</span></dd></dl>
+
+<dl><dt><a name="Controller-buttonRelease"><strong>buttonRelease</strong></a>(self, event)</dt><dd><span class="code">Esse&nbsp;método&nbsp;é&nbsp;ativado&nbsp;quando&nbsp;o&nbsp;botão<br>
+esquerdo&nbsp;do&nbsp;mouse&nbsp;é&nbsp;solto.<br>
+&nbsp;<br>
+Ele&nbsp;recebe&nbsp;as&nbsp;informações&nbsp;do&nbsp;evento&nbsp;de&nbsp;botão&nbsp;<br>
+quando&nbsp;é&nbsp;solto&nbsp;na&nbsp;interface&nbsp;e&nbsp;é&nbsp;responsável&nbsp;por<br>
+incluir&nbsp;o&nbsp;desenho&nbsp;na&nbsp;tela&nbsp;sempre&nbsp;que&nbsp;o&nbsp;evento&nbsp;ocorre.<br>
+&nbsp;<br>
+@param&nbsp;event:&nbsp;responsável&nbsp;por&nbsp;receber&nbsp;as<br>
+informações&nbsp;do&nbsp;clique&nbsp;na&nbsp;interface,&nbsp;nesse<br>
+caso,&nbsp;as&nbsp;coordenadas&nbsp;x&nbsp;e&nbsp;y&nbsp;finais.<br>
+&nbsp;<br>
+@see&nbsp;Desenho.incluir_figura_nova<br>
+@see&nbsp;atualizar_tela</span></dd></dl>
+
+<dl><dt><a name="Controller-salvar"><strong>salvar</strong></a>(self)</dt><dd><span class="code">Salva&nbsp;o&nbsp;desenho&nbsp;em&nbsp;um&nbsp;arquivo.<br>
+&nbsp;<br>
+Solicita&nbsp;à&nbsp;View&nbsp;um&nbsp;local&nbsp;para&nbsp;salvar&nbsp;o&nbsp;arquivo<br>
+e&nbsp;envia&nbsp;esse&nbsp;caminho&nbsp;para&nbsp;o&nbsp;Model&nbsp;realizar<br>
+o&nbsp;salvamento.&nbsp;Caso&nbsp;ocorra&nbsp;algum&nbsp;erro,&nbsp;uma<br>
+mensagem&nbsp;é&nbsp;exibida&nbsp;ao&nbsp;usuário.<br>
+&nbsp;<br>
+@see&nbsp;pedir_caminho_salvar<br>
+@see&nbsp;mostrar_erro</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
