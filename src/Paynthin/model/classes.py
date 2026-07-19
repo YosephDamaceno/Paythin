@@ -14,7 +14,7 @@ class Figura:
     objetos, servindo apenas como base para as subclasses.
 
     @author Yoseph Damaceno
-    @version 1.0
+    @version 1.0 
     '''
 
     def __init__(self, x1, y1, x2, y2, cor_borda, cor_preenchimento=None):
