@@ -34,9 +34,10 @@ class View:
 
         self.cor_atual = 'black'
         self.background = None
+        paddings = {'padx': 5, 'pady': 5}
 
         self.root = Tk()
-        self.root.title('Quarta entrega do Projeto POO')
+        self.root.title('Paynthin')
 
         #Parte da persistência, menu Arquivo (Salvar/Abrir)
         self.menu_bar = Menu(self.root)
@@ -46,11 +47,10 @@ class View:
 
         self.frame = Frame(self.root)
 
-        paddings = {'padx': 5, 'pady': 5}
 
         self.label = ttk.Label(
             self.frame,
-            text='Escolha o que vai desenhar:'
+            text='Tipo da Figura:'
         )
         self.label.grid(column=0, row=0, sticky=W, **paddings)
 
@@ -70,17 +70,22 @@ class View:
             'Hexágono'
         )
 
-        self.option_menu.grid(column=1, row=0, sticky=W, **paddings)
+        self.option_menu.grid(column=0, row=1, sticky=W, **paddings)
 
-        self.canvas = Canvas(self.frame, bg='white', width=600, height=600)
-        self.canvas.grid(column=0, row=3, columnspan=2, sticky=W, **paddings)
+        self.canvas = Canvas(self.frame, bg='white', width=1080, height=720)
+        self.canvas.grid(
+            column=0, 
+            row=3, 
+            columnspan=3, 
+            sticky=W, 
+            **paddings
+            )
 
-        self.botao_cor_borda = Button(
+        self.label = ttk.Label(
             self.frame,
-            text="Cor da Borda",
-            command=self.escolher_cor_borda
+            text='Cor da Figura:'
         )
-        self.botao_cor_borda.grid(column=0, row=1, sticky=W, **paddings)
+        self.label.grid(column=1, row=0, sticky=W, **paddings)
 
         self.botao_cor_preenchimento = Button(
             self.frame,
@@ -88,6 +93,20 @@ class View:
             command=self.escolher_cor_preenchimento
         )
         self.botao_cor_preenchimento.grid(column=1, row=1, sticky=W, **paddings)
+
+        self.label = ttk.Label(
+            self.frame,
+            text='Cor da Borda:'
+        )
+        self.label.grid(column=2, row=0, sticky=W, **paddings)
+
+        self.botao_cor_borda = Button(
+            self.frame,
+            text="Borda",
+            command=self.escolher_cor_borda
+        )
+        self.botao_cor_borda.grid(column=2, row=1, sticky=W, **paddings)
+
 
         self.frame.pack()
 
