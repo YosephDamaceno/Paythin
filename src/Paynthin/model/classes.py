@@ -1,6 +1,6 @@
 #Aqui ficarão as classes que permitem criar as figuras
 import json
-from model.estado import EstadoOcioso
+from .estado import EstadoOcioso
 
 
 #Classe base

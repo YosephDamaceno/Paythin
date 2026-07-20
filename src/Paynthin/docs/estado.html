@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module model.estado</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="model.html" class="white">model</a>.estado</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/jayk/%C3%81rea%20de%20trabalho/Entrega%20Projeto/Paythin/src/Paynthin/model/estado.py">/home/jayk/Área de trabalho/Entrega Projeto/Paythin/src/Paynthin/model/estado.py</a></td></tr></table>
+    <p><span class="code">Implementação&nbsp;do&nbsp;padrão&nbsp;State&nbsp;para&nbsp;a&nbsp;classe&nbsp;Desenho.<br>
+&nbsp;<br>
+Ideia&nbsp;geral:<br>
+-&nbsp;<a href="#EstadoDesenho">EstadoDesenho</a>&nbsp;é&nbsp;a&nbsp;interface&nbsp;(classe&nbsp;abstrata)&nbsp;que&nbsp;todo&nbsp;estado&nbsp;deve&nbsp;seguir.<br>
+-&nbsp;<a href="#EstadoOcioso">EstadoOcioso</a>&nbsp;representa&nbsp;a&nbsp;situação&nbsp;em&nbsp;que&nbsp;nenhuma&nbsp;figura&nbsp;está&nbsp;sendo&nbsp;criada.<br>
+-&nbsp;<a href="#EstadoDesenhando">EstadoDesenhando</a>&nbsp;representa&nbsp;a&nbsp;situação&nbsp;em&nbsp;que&nbsp;uma&nbsp;figura&nbsp;está&nbsp;em&nbsp;andamento.<br>
+&nbsp;<br>
+A&nbsp;classe&nbsp;Desenho&nbsp;(em&nbsp;model/classes.py)&nbsp;deixa&nbsp;de&nbsp;checar&nbsp;"if&nbsp;self.<strong>figura_nova</strong><br>
+is&nbsp;None"&nbsp;e&nbsp;passa&nbsp;a&nbsp;delegar&nbsp;cada&nbsp;ação&nbsp;para&nbsp;o&nbsp;estado&nbsp;atual&nbsp;(self.<strong>estado</strong>).<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version:&nbsp;1.0</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="abc.html#ABC">abc.ABC</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="model.estado.html#EstadoDesenho">EstadoDesenho</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="model.estado.html#EstadoDesenhando">EstadoDesenhando</a>
+</dt><dt class="heading-text"><a href="model.estado.html#EstadoOcioso">EstadoOcioso</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoDesenhando">class <strong>EstadoDesenhando</strong></a>(<a href="model.estado.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;em&nbsp;que&nbsp;uma&nbsp;figura&nbsp;está&nbsp;sendo&nbsp;criada&nbsp;(o&nbsp;usuário<br>
+está&nbsp;com&nbsp;o&nbsp;botão&nbsp;do&nbsp;mouse&nbsp;pressionado,&nbsp;arrastando).<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version:&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.estado.html#EstadoDesenhando">EstadoDesenhando</a></dd>
+<dd><a href="model.estado.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoDesenhando-atualizar"><strong>atualizar</strong></a>(self, desenho, x, y)</dt></dl>
+
+<dl><dt><a name="EstadoDesenhando-incluir"><strong>incluir</strong></a>(self, desenho)</dt></dl>
+
+<dl><dt><a name="EstadoDesenhando-iniciar"><strong>iniciar</strong></a>(self, desenho, x, y, tipo, cor_borda, cor_preenchimento)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="model.estado.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoDesenho">class <strong>EstadoDesenho</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Interface&nbsp;que&nbsp;define&nbsp;as&nbsp;ações&nbsp;que&nbsp;dependem&nbsp;do&nbsp;estado&nbsp;atual<br>
+do&nbsp;desenho:&nbsp;iniciar,&nbsp;atualizar&nbsp;e&nbsp;incluir&nbsp;uma&nbsp;figura.<br>
+&nbsp;<br>
+Cada&nbsp;subclasse&nbsp;concreta&nbsp;implementa&nbsp;essas&nbsp;ações&nbsp;de&nbsp;acordo<br>
+com&nbsp;a&nbsp;situação&nbsp;que&nbsp;representa&nbsp;(ocioso&nbsp;ou&nbsp;desenhando).<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version:&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.estado.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoDesenho-atualizar"><strong>atualizar</strong></a>(self, desenho, x, y)</dt></dl>
+
+<dl><dt><a name="EstadoDesenho-incluir"><strong>incluir</strong></a>(self, desenho)</dt></dl>
+
+<dl><dt><a name="EstadoDesenho-iniciar"><strong>iniciar</strong></a>(self, desenho, x, y, tipo, cor_borda, cor_preenchimento)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'atualizar', 'incluir', 'iniciar'})</dl>
+
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EstadoOcioso">class <strong>EstadoOcioso</strong></a>(<a href="model.estado.html#EstadoDesenho">EstadoDesenho</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Estado&nbsp;em&nbsp;que&nbsp;não&nbsp;há&nbsp;nenhuma&nbsp;figura&nbsp;sendo&nbsp;desenhada&nbsp;no&nbsp;momento.<br>
+Só&nbsp;faz&nbsp;sentido&nbsp;"iniciar"&nbsp;uma&nbsp;figura&nbsp;nova;&nbsp;atualizar&nbsp;e&nbsp;incluir<br>
+não&nbsp;têm&nbsp;efeito,&nbsp;pois&nbsp;não&nbsp;há&nbsp;nada&nbsp;em&nbsp;andamento.<br>
+&nbsp;<br>
+@author&nbsp;Yoseph&nbsp;Damaceno<br>
+@version:&nbsp;1.0<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="model.estado.html#EstadoOcioso">EstadoOcioso</a></dd>
+<dd><a href="model.estado.html#EstadoDesenho">EstadoDesenho</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EstadoOcioso-atualizar"><strong>atualizar</strong></a>(self, desenho, x, y)</dt></dl>
+
+<dl><dt><a name="EstadoOcioso-incluir"><strong>incluir</strong></a>(self, desenho)</dt></dl>
+
+<dl><dt><a name="EstadoOcioso-iniciar"><strong>iniciar</strong></a>(self, desenho, x, y, tipo, cor_borda, cor_preenchimento)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Data descriptors inherited from <a href="model.estado.html#EstadoDesenho">EstadoDesenho</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
