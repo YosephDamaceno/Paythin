@@ -1,5 +1,7 @@
 #Aqui ficarão as classes que permitem criar as figuras
 import json
+from model.estado import EstadoOcioso
+
 
 #Classe base
 class Figura:
@@ -513,8 +515,18 @@ class Desenho:
     '''
 
     def __init__(self):
+        '''
+        Inicializa um novo desenho.
+
+        Cria a lista de figuras, inicializa a figura
+        em construção e define o estado inicial do
+        desenho como ocioso.
+        '''
+
         self.figuras = []
         self.figura_nova = None
+        self.estado = EstadoOcioso()
+
     def iniciar_figura_nova(self, x, y, tipo, cor_borda, cor_preenchimento):
         '''
         Inicia a criação de uma nova figura.
@@ -534,12 +546,9 @@ class Desenho:
         @see atualizar_figura_nova
         '''
 
-        classe = tipo_figura.get(tipo)
-        if classe is not None:
-            self.figura_nova = classe(x, y, x, y, cor_borda, cor_preenchimento)
-        else:
-            self.figura_nova = Rabisco(x, y, cor_borda) 
+        self.estado.iniciar(self, x, y, tipo, cor_borda, cor_preenchimento)
         return self.figura_nova
+
     def atualizar_figura_nova(self, x, y):
         '''
         Atualiza a figura que está sendo criada.
@@ -553,9 +562,8 @@ class Desenho:
         @see iniciar_figura_nova
         '''
 
-        if self.figura_nova is None:
-            return
-        self.figura_nova.atualizar(x, y)       
+        self.estado.atualizar(self, x, y)
+
     def incluir_figura_nova(self):
         '''
         Adiciona a figura criada à lista de figuras.
@@ -566,12 +574,9 @@ class Desenho:
         @see desenhar_figuras
         '''
 
-        if self.figura_nova is None:
-            return 
-        if not self.figura_nova.incompleta():
-            self.figuras.append(self.figura_nova)
-        self.figura_nova = None
-    def desenhar_figuras(self, canvas): #aqui é pra gnt garantir que todas as figuras(concluidas e em andamento) seja mostrada 
+        self.estado.incluir(self)
+
+    def desenhar_figuras(self, canvas):
         '''
         Retorna todas as figuras que devem ser
         exibidas na área de desenho.
@@ -584,9 +589,10 @@ class Desenho:
         '''
 
         if self.figura_nova is not None:
-            return self.figuras + [self.figura_nova] 
+            return self.figuras + [self.figura_nova]
         else:
             return self.figuras
+
     #Persistência
     def salvar(self, endereco_arq):
         '''
@@ -597,10 +603,11 @@ class Desenho:
 
         @see carregar
         '''
-        
-        dados = [ figura._dict() for figura in self.figuras]
+
+        dados = [figura._dict() for figura in self.figuras]
         with open(endereco_arq, 'w', encoding='utf-8') as arquivo:
             json.dump(dados, arquivo, ensure_ascii=False, indent=4)
+
     def carregar(self, endereco_arq):
         '''
         Carrega as figuras de um arquivo.
@@ -617,5 +624,5 @@ class Desenho:
         with open(endereco_arq, 'r', encoding='utf-8') as arquivo:
             dados = json.load(arquivo)
             self.figuras = [Figura.from_dict(item) for item in dados]
-            self.figura_nova = None #qauando carregar, não vai ter figura em andamento
-        
+            self.figura_nova = None
+            self.estado = EstadoOcioso()
